@@ -125,29 +125,20 @@ var input = {
 			}
 		});
 
-	    $(document.body).on("mousemove", function(e) {
-	        if (self.$dragging) {
-	        	var marginX = Math.max(0, Math.min(e.clientX-34,  177));
-	            self.$slider.css( "margin-left", marginX  );
-	            self.setPotency(marginX/177 * 100);
-	        }
-	    });
-
-	    this.$slider.on("mousedown", function (e) {
-	        self.$dragging = true;
-	    });
-
-	    $(document.body).on("mouseup", function (e) {
-	        self.$dragging = false;
-	    });
-		
+		$(document).on('input', '#slider', function() {
+		    self._potency =  $(this).val();
+			console.log("$(this).val()", self._potency);
+		});
 	},
 	enable: function(){
-		this.$el.removeClass("disabled");
-		this._isEnabled = true;
+		if(!this._isEnabled){			
+			this.$el.toggleClass("disabled");
+			this._isEnabled = true;
+		}
 	},
 	setPotency: function(value){
 		console.log("value", value);
+		$("#slider").value = value;
 		this._potency = value;
 	},
 	getPotency: function(){

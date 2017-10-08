@@ -80,19 +80,29 @@ h1 {
 		}
 		.slider_cont {
 			position: absolute;
-		    width: 177px;
-		    margin-top: 18px;
-			.slider_bar {			
-			    width: 97%;
-	   			border: 2px solid rgb(88, 88, 88);
+		    width: 171px;
+		    margin-top: 8px;
+
+		    input[type=range] {
+		    	width: 100%;
+			    -webkit-appearance: none;
+			    padding: 0px;
+			    margin: 0px;		    	
+			    height: 0px;
+		    	border: 2px solid rgb(88, 88, 88);
+		    }
+		    input[type=range]:focus {
+			  outline: none;
 			}
-			.arrow {
-				transform: translate(-9px, 0);
-				width: 15px;
+		    input::-webkit-slider-thumb {
+		    	-webkit-appearance: none;
+		    	border: 0px solid;
+		    	padding: 0px;
+		    	margin-top: 18px;
+		    	width: 15px;
 				height: 13px;
-				margin-left: 50%;
 				background-image: url("../assets/arrow.png");
-			} 
+		    }
 		}
 	}
 
