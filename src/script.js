@@ -3,6 +3,7 @@ var output = {
 	_isRunning: false,
 	_isOver: false,
 	_changed: false,
+	_hasStarted: false,
 	fuel: {
 		$el: ($("#fuel ul")),
 		$bar: ($("#fuel li")),
@@ -120,19 +121,20 @@ var input = {
 		// start button
 		this.$button.on("click", function(e){
 			if(self._isEnabled){
-				self.$el.toggleClass("disabled");
+				console.log("disabled!");
+				self.$el.addClass("disabled");
 				self._isEnabled = false;				
 			}
 		});
-
 		$(document).on('input', '#slider', function() {
 		    self._potency =  $(this).val();
 			console.log("$(this).val()", self._potency);
 		});
 	},
 	enable: function(){
-		if(!this._isEnabled){			
-			this.$el.toggleClass("disabled");
+		if(!this._isEnabled){		
+			console.log("enabled!");
+			this.$el.removeClass("disabled");
 			this._isEnabled = true;
 		}
 	},
@@ -167,8 +169,8 @@ var App = {
 	render: function(timestamp){
 		var self = this;
 		if(output._changed) output.render();
-		if(!input._isEnabled && output._isOver) {
-			input.enable();	
+		if(!input._isEnabled && output._isOver && !output._isRunning) {
+			input.enable();
 		}
 		window.requestAnimationFrame( function(timestamp) {
 			self.render(timestamp);
