@@ -1,0 +1,114 @@
+/* GLOBAL */
+body {
+	color: rgb(92, 92, 92);
+	font-size: 14px;
+	font-family: Arial;
+}
+h1 {
+	font-color: black;
+}
+.box {
+	width: 415px;
+	outline: black solid 1px;
+}
+.container {
+	padding: 10px 27px;
+	margin-bottom: 5px;
+}
+#fuel {
+	width: 360px;
+}
+.text {
+	margin-bottom: 5px;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+	margin-right: 4px;
+}
+.center {
+	margin-left: 122px;
+}		
+/* OUTPUT */
+.variable {
+	width: 172px;
+	background-color: rgb(188, 188, 188);
+	border: 1px solid;
+	border-color: rgb(188, 188, 188);
+	border-radius: 5px;
+}
+.under {
+	display: -webkit-box;
+}
+#output {
+	/* FUEL */
+	#fuel {
+		margin-bottom: 10px;
+		ul.progress_bar {
+			margin: 0px;
+			padding: 0px; 
+			list-style: none;
+			li {
+				display: -webkit-inline-box;			
+				width: 31px;
+				height: 75px;
+				margin-right: 1px;
+				background-color: rgb(88, 88, 88);
+				&.inactive {
+					background-color: rgb(188, 188, 188);
+				}
+			}
+		}
+	}
+	/* DISTANCE */
+	#distance {
+		margin-right: 7px;
+	}	
+}
+
+#input {
+	/* INPUT */
+	#potency {			
+		width: 180px;
+		margin-right: 13px;
+		.slider {
+			.text {
+				font-size: 12px;
+			}
+		}
+		.slider_cont {
+			position: absolute;
+		    width: 177px;
+		    margin-top: 18px;
+			.slider_bar {			
+			    width: 97%;
+	   			border: 2px solid rgb(88, 88, 88);
+			}
+			.arrow {
+				transform: translate(-9px, 0);
+				width: 15px;
+				height: 13px;
+				margin-left: 50%;
+				background-image: url("../assets/arrow.png");
+			} 
+		}
+	}
+
+	button#activate {
+		font-size: 15px;
+		width: 160px;
+		height: 60px; 
+		color: white;
+		background-color: rgb(88, 88, 88);
+		border: 1px solid;
+		border-color: rgb(88, 88, 88);
+		border-radius: 17px;
+	}	
+	&.disabled {
+		.container {		
+			opacity: 0.5;
+		}
+	}
+}
